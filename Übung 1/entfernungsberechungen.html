@@ -1,0 +1,33 @@
+<!-- Abgabe der Übung 1 von Felix Disselkamp -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mein Entfernungsrechner</title>
+
+    <script src="point.js"></script>
+    <script src="cities.js"></script>
+    <script src="berechnung.js"></script> 
+
+    <link rel="stylesheet" href="entfernungsberechnerCSS.css">
+
+
+</head>
+<body>
+    <h1>Entfernungsberechnungen</h1>
+    <p1>Hier werden die berechneten Entfernungen vom GEO1 zu folgenden Punkten dargestellt:</p1>
+
+    <P id="Entfernungen"></p>
+
+    <!-- Einbinden der Städteliste in die Website -->
+    <script>
+        document.getElementById("Entfernungen").innerHTML = ergebnis;
+        </script>
+</body>
+</html>
+

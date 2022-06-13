@@ -1,0 +1,103 @@
+<!-- Abgabe der Übung 2 von Felix Disselkamp -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mein Entfernungsrechner</title>
+
+
+
+    <link rel="stylesheet" href="entfernungsberechnerCSS.css">
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+
+
+    <main role="main">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="Uebung_5_Geosoft.html">Home</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="entfernungsberechungen.html">Haltestellen</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="entfernungsberechungen_uebung2.html">Entfernungen zu den POI</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>  
+    </main>
+
+    <h1>Entfernungsberechnungen</h1>
+    <!-- aus Aufgabe 1 
+
+    <p1>___________________________________________________________________________________________________________</p1>
+    <br/>
+
+    <p1>Hier werden die berechneten Entfernungen vom GEO1 zu folgenden Punkten aus der letzten Aufgabe dargestellt:</p1>
+    <P id="Entfernungen"></p>
+    <p1>___________________________________________________________________________________________________________</p1>
+    <br/> <br/> <br/> <br/> <br/> <br/>
+        -->
+
+    <!-- Aufgabe 2 -->
+    <p1>Hier können die Entfernungen zwischen einem einzugebenen Punkt und einigen Points of Interest berechnet werden:</p1>
+    <p>Punkt-Eingabe im GeoJSON-Format:</p>
+    <input type="text" name="textfeld" id="textfeld"></input>
+    <button id="onclickevent"> Hier klicken um die Eingabe zu bestaetigen.</button> 
+    <br/>  <br/>
+
+
+    <!-- Einbinden des Bestaetigungsfeldes-->
+    <script>
+            let element = document.getElementById("onclickevent");
+        </script>
+
+
+    <!-- Einbinden des Browserstandorts-->
+    <button onclick="getLocation()">Browser-Koordinaten einlesen</button>
+    <p id="demo"></p>
+    <br/> <br/> <br/> <br/> <br/>
+
+
+    <!-- Einbinden der Entfernungsberechnungen-->
+    <p>Entfernungen in Meter:</p>
+    <P id="Entfernungen2"></p></br>
+
+    <script src="point.js"></script>
+    <script src="cities.js"></script>
+    <script src="berechnung_uebung2.js"></script>
+    <script src="poi.js"></script>
+
+
+    <!-- Einbinden der Städteliste aus Aufgabe 1 
+    <script>
+        document.getElementById("Entfernungen").innerHTML = ergebnis;
+        </script>
+    <br/> <br/> <br/>
+        -->
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
+

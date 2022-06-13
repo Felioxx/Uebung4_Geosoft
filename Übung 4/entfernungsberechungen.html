@@ -1,0 +1,111 @@
+<!-- Abgabe der Übung 4 von Felix Disselkamp -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mein Entfernungsrechner</title>
+
+
+    <!-- CSS einbinden -->
+    <link rel="stylesheet" href="entfernungsberechnerCSS.css">
+    <!-- Leaflet CSS einbinden -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+
+    <!-- Leaflet einbinden -->
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <!-- Leaflet draw einbinden -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.js"></script>
+    <!-- turf.js einbinden -->
+    <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+
+</head>
+
+<body>
+    <!-- Hintergrund einbinden -->
+    <style>
+        body {
+          background-image: url('Hintergrund.jpg');
+          background-size: contain;
+        }
+        </style> 
+
+
+
+    <!-- aus Aufgabe 1 -->
+    <h1>Entfernungsberechnungen</h1>
+    <p1>___________________________________________________________________________________________________________</p1>
+    <br />
+
+    <p1>Hier werden die berechneten Entfernungen vom GEO1 zu folgenden Punkten aus Aufgabe 1 dargestellt:</p1>
+    <P id="Entfernungen"></p>
+    <p1>___________________________________________________________________________________________________________</p1>
+    <br /> <br /> <br /> <br />
+
+
+    <!-- Aufgabe 2 und 3 -->
+    <p1>Nun werden die Entfernungen zwischen einem einzugebenen Punkt und einigen Points of Interest aus der Aufgabe 2
+        sowie den ersten 10 Bushaltestellen aus Aufgabe 3 berechnet:</p1>
+    <p>Punkt-Eingabe im GeoJSON-Format:</p>
+    <input type="text" name="textfeld" id="textfeld"></input>
+    <button id="onclickevent"> Hier klicken um die Eingabe zu bestaetigen.</button>
+    <br /> <br />
+    <script>
+        document.getElementById("textfeld").value = '{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[7.595881,51.969028]},"id":"1f1c1e76-de1e-4bf5-b927-0a0bdb59a10e"}';
+    </script>
+
+
+    <!-- Einbinden des Bestaetigungsfeldes-->
+    <script>
+        let element = document.getElementById("onclickevent");
+    </script>
+
+
+    <!-- Einbinden des Browserstandorts-->
+    <button onclick="getLocation()">Browser-Koordinaten einlesen</button>
+    <p id="demo"></p>
+    <br /> <br /> 
+
+
+    <!-- Einbinden der Entfernungsberechnungen-->
+    <P id="Entfernungen2"></p>
+
+
+    <!-- Einbinden der Entfernungsberechnungen zu den Bushaltestellen-->
+    <P id="Entfernungen3"></p>
+
+
+    <!-- Einbinden der naechsten Bushaltestelle-->
+    <P id="naechsteHaltestelle"></p>
+    <!-- Einbinden der naechsten Abfahrten-->
+    <P id="naechsteLinien"></p>
+    <br />
+
+
+    <script src="point.js"></script>
+    <script src="cities.js"></script>
+    <script defer src="berechnung.js"></script>
+    <script src="poi.js"></script>
+
+
+    <!-- Aufgabe 4 -->
+    <p1>Hier werden die Bushaltestellen auf einer Karte dargestellt:</p1>
+    <br />     <br />
+
+    <!-- Einbinden der Karte -->
+    <div id="map"></div>
+    <!-- Einbinden des Textfeldes für das GeoJSON-->
+    <div id="data">
+        <textarea id="geojsontextarea"></textarea><br />
+    </div>
+
+
+</body>
+
+</html>
